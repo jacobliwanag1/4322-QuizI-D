@@ -12,17 +12,20 @@ import csv
 
 #open the file
 
-
-
+infile=open('employee_data.csv','r')
+employees=csv.reader(infile, delimiter=',')
 
 #create an empty dictionary
-
-
+es_dict={}
+dep='Marketing'
+title='CSR'
 #use a loop to iterate through the csv file
 
+for employee in employees:
 
     #check if the employee fits the search criteria
-
+    if employee[3]==dep and employee[4]==title:
+        print('Manager Name:',employee[1],employee[2],'Current Salary:',employee[5])
 
     
 
@@ -32,7 +35,9 @@ print()
 
 #iternate through the dictionary and print out the key and value as per printout
 
-
+for employee in employees:
+    if employee[3]==dep and employee[4]==title:
+        print('Manager Name:',employee[1],employee[2],'Current Salary:',employee[5]*1.10)
 
           
         
